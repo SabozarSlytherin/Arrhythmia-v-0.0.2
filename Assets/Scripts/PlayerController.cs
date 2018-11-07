@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        qez = -1.3f;
+        qez = -1.2f;
         cameraT = Camera.main.transform;
 		controller = GetComponent<CharacterController> ();
 
@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour {
         
         
 
-        if (groundTouch())
+        if (groundTouch(2.75f))
         {
             
             isGrounded = true;
@@ -134,10 +134,10 @@ public class PlayerController : MonoBehaviour {
         RaycastHit hitSmth;
         bool wrpos = wallRunPossible(inputDir, frontRay2, frontRay2, new RaycastHit());
 		bool wrposleft = wallRunPossible(inputDir, frontRay1, frontRay1, new RaycastHit());
-        if (!Animator.GetBool("WallRun")) this.qez = -1.3f;
+        if (!Animator.GetBool("WallRun")) this.qez = -1.2f;
         if (wrpos)
         {
-            float rez = -1.3f;
+			float rez = -1.2f;
 			if (skokwr && Physics.Raycast (rightRay2, out hitSmth) && Physics.Raycast (rightRay1, out hitSmth) && hitSmth.collider.tag == "RunnableWall" && hitSmth.distance < 4f) {
 				rez = cube (qez, 0f, 0.01f);
 				Debug.Log (" KVADRAD JE OVOLIKO : " + rez);
@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour {
 
 		if (wrposleft)
 		{
-			float rez = -1.3f;
+			float rez = -1.2f;
 			if (skokwr && Physics.Raycast (leftRay2, out hitSmth) && Physics.Raycast (leftRay1, out hitSmth) && hitSmth.collider.tag == "RunnableWall" && hitSmth.distance < 4f) {
 				rez = cube (qez, 0f, 0.01f);
 				Debug.Log (" KVADRAD JE OVOLIKO : " + rez);
@@ -172,12 +172,18 @@ public class PlayerController : MonoBehaviour {
 			Animator.Play ("WallRun");
 		}
 
+		if(Animator.GetBool("uSkoku")){
+			if (groundTouch (8f) && velocityY < -15f) {
+				Animator.Play ("doskok1");
+			}
+		}
+
     }
     // x^2 jednacina 
     public float cube(float i, float j, float k)
     {
         if (i < j) this.qez += k;
-        return i * i * i;
+		return -(i * i);
     }
     // WallRun Mogucnost 
     public bool wallRunPossible(Vector2 inp, Ray pos, Ray pos2, RaycastHit hitSmth)
@@ -216,19 +222,16 @@ public class PlayerController : MonoBehaviour {
 
     }
 
-    public bool groundTouch()
+	public bool groundTouch(float a)
     {
         Ray rayDown = drawRayDown();
         RaycastHit hitGround;
-        if (Physics.Raycast(rayDown, out hitGround) && hitGround.collider.tag == "Ground" && hitGround.distance < 2.75f)
+        if (Physics.Raycast(rayDown, out hitGround) && hitGround.collider.tag == "Ground" && hitGround.distance < a)
         {
                 return true;
         }
         else { return false; }
-
-
     }
-
 
     void FixedUpdate (){
 		brojacZaJenduSekundu ();

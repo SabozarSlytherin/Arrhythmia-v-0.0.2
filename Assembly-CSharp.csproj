@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6EA894C1-86CA-08EB-9784-1C72618E238E}</ProjectGuid>
+    <ProjectGuid>{45862E8C-1D69-CA34-D0CC-6D8BFFBB2B5B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -51,11 +51,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\scri.cs" />
      <Compile Include="Assets\Scripts\a.cs" />
      <Compile Include="Assets\Scripts\GlobalRandom.cs" />
      <Compile Include="Assets\Scripts\Main.cs" />
-     <Compile Include="Assets\Scripts\playerCollision.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\ThirdPersonCamera.cs" />
  <Reference Include="UnityEngine.UI">

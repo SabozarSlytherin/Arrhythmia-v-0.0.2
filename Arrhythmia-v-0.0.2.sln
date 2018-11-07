@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrhythmia-v-0.0.2", "Assembly-CSharp.csproj", "{45862E8C-1D69-CA34-D0CC-6D8BFFBB2B5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45862E8C-1D69-CA34-D0CC-6D8BFFBB2B5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45862E8C-1D69-CA34-D0CC-6D8BFFBB2B5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45862E8C-1D69-CA34-D0CC-6D8BFFBB2B5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45862E8C-1D69-CA34-D0CC-6D8BFFBB2B5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
